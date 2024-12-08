@@ -133,7 +133,7 @@ const SearchListDisplay = () => {
                 return (<div>
                    <>
                     {/* Grid Layout */}
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 -m-6">
                         {animeList?.map((elem, index) => (
                             <div 
                                 key={`${elem.mal_id}-${index}`}
@@ -242,9 +242,9 @@ const SearchListDisplay = () => {
 
             {/* Loading State */}
             {isLoading ? (
-                <div className="flex justify-start items-center min-h-[50vh]">
+                <div className="flex justify-start items-center md:min-h-[50vh] w-screen">
                 <div className="relative">
-                <LoadingWidget width='w-1/4' />
+                <LoadingWidget width='md:w-1/4 w-full -m-8' />
                 </div>
             </div>
             ) : (

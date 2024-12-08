@@ -22,7 +22,7 @@ const ErrorWidget: FC<ErrorWidgetProps> = ({
         <TrafficCone className="w-8 h-8 text-white" />,
     ]
     return (
-        <div className={`bg-transparent rounded-lg p-6 ${isEpisode? "min-w-[160vh]" : null}`}>
+        <div className={`bg-transparent rounded-lg p-6 ${isEpisode? "md:min-w-[160vh] w-screen" : null}`}>
             <div className="flex flex-col items-center text-center gap-4">
                 {/* Error Icon */}
                 <div className="bg-indigo-500/20 rounded-full p-3">

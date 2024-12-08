@@ -115,17 +115,17 @@ const AnimeScrollWidget: FC<AnimeScrollType> = ({ animeList, isRanked }) => {
             return (
                 <div className="flex flex-row">
                 <section
-                    className={`flex flex-row flex-grow overflow-x-hidden ml-2 ${!isMouseDown? parentClass : ""}`}
-                    ref={carouselRef}
+                    className={`md:flex md:flex-row grid grid-cols-2  md:flex-grow overflow-x-hidden md:ml-2 ${!isMouseDown? parentClass : ""}`}
+                    ref={window.innerWidth < 768? null : carouselRef}
                     style={{ userSelect: 'none' }} // Prevent text selection
                 >
                     {animeList.map((anime) => (
-                        <div key={anime.mal_id} className="flex-shrink-0 w-1/6 p-2 snap-start">
+                        <div key={anime.mal_id} className="flex-shrink-0 md:w-1/6 p-2 snap-start">
                             <AnimeWidget anime={anime} isRanked={isRanked} />
                         </div>
                     ))}
                     </section>
-                    <div className="flex flex-col h-[80%] flex-shrink ">
+                    <div className="md:flex flex-col h-[80%] flex-shrink hidden">
             <button onClick={scrollToPreviousItem}>
             <div className="flex colorTab rounded-lg items-center h-[60%] p-2 mx-2">
             <ChevronLeft />

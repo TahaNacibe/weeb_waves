@@ -82,5 +82,16 @@ export class Anime {
       this.explicit_genres = json.explicit_genres.map((item: any) => new Genre(item));
       this.themes = json.themes.map((item: any) => new Genre(item));
       this.demographics = json.demographics.map((item: any) => new Genre(item));
-    }
+  }
+  
+  static toJson(anime: Anime){
+    return {
+      "mal_id": anime.mal_id,
+      "title": anime.title,
+      "type": anime.type,
+      "rank": anime.rank,
+      "status": anime.status,
+      "cover":anime.images.jpg.large_image_url
+  }
+  }
   }

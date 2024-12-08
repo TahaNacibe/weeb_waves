@@ -2,10 +2,10 @@ import React from 'react';
 import { LayoutDashboard } from 'lucide-react';
 
 
-export default function LoadingWidget({width = "w-1/6"}) {
+export default function LoadingWidget({width = "md:w-1/6 w-full"}) {
   const loadingItem = () => {
     return (
-      <div className={`px-1 ${width}`}>
+      <div className={`px-1 py-1 ${width}`}>
         {/* image holder section */}
         <div className=" h-56 bg-gray-300 dark:bg-gray-600 w-full flex items-center justify-center">
         <LayoutDashboard size={50} />
@@ -25,7 +25,7 @@ export default function LoadingWidget({width = "w-1/6"}) {
 
   return (
     <div className="p-4">
-      <div role="status" className=" animate-pulse flex gap-1">
+      <div role="status" className=" animate-pulse md:flex grid grid-cols-2 md:gap-1">
         {loadingItem()}
         {loadingItem()}
         {loadingItem()}

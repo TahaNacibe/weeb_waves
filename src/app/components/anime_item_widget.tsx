@@ -57,8 +57,8 @@ const AnimeWidget: FC<AnimeWidgetType> = ({ anime, isRanked }) => {
 
             {/* Hover details overlay - appears on hover, stays clear*/}
             <div className="absolute inset-0 z-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 m-1">
-                <div className=" rounded-lg bg-gray-950 bg-opacity-50 flex flex-col justify-between moreSize -mx-2 p-2 ">
-                    <h3 className="text-lg font-semibold text-white mb-2">{anime.title}</h3>
+                <div className=" rounded-lg bg-gray-950 bg-opacity-50 flex flex-col justify-between moreSize -mx-4 p-2 ">
+                    <h3 className="md:text-lg font-semibold text-white mb-2">{anime.title}</h3>
                     <div className="space-y-2 text-sm text-gray-200">
                         {anime.synopsis && (
                             <p className="line-clamp-2">{anime.synopsis}</p>
@@ -79,7 +79,7 @@ const AnimeWidget: FC<AnimeWidgetType> = ({ anime, isRanked }) => {
                                 >Score: {anime.score || 'N/A'}</span>
                              <span 
                                     className="px-2 py-1 bg-gray-700/50 rounded-full text-xs"
-                                >Episodes: {anime.episodes || 'N/A'}</span>
+                                >Ep: {anime.episodes || 'N/A'}</span>
                         </div>
                     </div>
                 </div>

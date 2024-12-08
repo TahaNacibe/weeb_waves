@@ -193,7 +193,7 @@ const AnimeEpisodesList: FC<AnimeEpisodeListType> = ({ animeTitle, animeCover })
                 <div className="flex flex-row bg-black px-2 py-4">
                 {/* load in case exist */}
                     {episodesList.length > 0 ?
-                    <div className="grid grid-cols-5 shrink-0 h-full gap-4 px-6 w-full">
+                    <div className="grid md:grid-cols-5 grid-cols-2 shrink-0 h-full gap-4 px-6 w-full">
                     {episodesList.map((ep) => (
                         <div key={ep.number}>
                             <EpisodeItem item={ep} url={animeCover} />
@@ -213,12 +213,12 @@ const AnimeEpisodesList: FC<AnimeEpisodeListType> = ({ animeTitle, animeCover })
 
 
     return (
-        <div className="flex flex-col overflow-x-hidden">
+        <div className="flex flex-col overflow-x-hidden overflow-y-hidden">
             <h1 className="px-4 py-2 text-2xl">
                 Episodes 
             </h1>
             {/* episodes section and related */}
-            <div className="flex flex-row w-[100%] pr-2">
+            <div className="flex md:flex-row flex-col -m-4 md:w-[100%] pr-2">
 
            {episodesWidget()}
         <RelatedAnimeSection relatedList={relatedList} isLoading = {isRelatedLoading} />

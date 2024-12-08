@@ -47,6 +47,8 @@ const RelatedAnimeSection: FC<RelatedAnimeProps> = ({ relatedList, isLoading }) 
             if (relatedList.length == 0) {
                 return (<ErrorWidget type={1} title='Nothing' message='Try refreshing the Page?' />)
             }
+
+            //* ui
             return (
                 <div>
                     <div className="flex flex-col">
@@ -54,11 +56,11 @@ const RelatedAnimeSection: FC<RelatedAnimeProps> = ({ relatedList, isLoading }) 
             <Link
                 href={`/details/${anime.mal_id}?animeName=${anime.title}&animeId=${anime.mal_id}`}
                 key={anime.mal_id}
-                className="group hover:bg-white/10 rounded-lg transition-all duration-200 p-3 -mx-3"
+                className="group hover:bg-white/10 rounded-lg transition-all duration-200 p-2 mx-1"
             >
-                <div className="flex gap-4">
+                <div className="grid grid-cols-2">
                     {/* Image with overlay on hover */}
-                    <div className="relative w-24 h-32 flex-shrink-0">
+                    <div className="relative w-24 h-32 flex-shrink-0 ">
                         <img
                             src={anime.images.jpg.large_image_url}
                             alt={anime.title}
@@ -70,7 +72,7 @@ const RelatedAnimeSection: FC<RelatedAnimeProps> = ({ relatedList, isLoading }) 
                     </div>
                     
                     {/* Info section */}
-                    <div className="flex flex-col justify-between flex-grow">
+                    <div className="flex flex-col justify-between flex-grow pr-4 md:pr-0">
                         {/* Title */}
                         <h2 className="text-sm font-medium text-white line-clamp-2 leading-snug mb-2 group-hover:text-blue-400 transition-colors duration-200">
                             {anime.title}
@@ -129,7 +131,7 @@ const RelatedAnimeSection: FC<RelatedAnimeProps> = ({ relatedList, isLoading }) 
         }
     }
     return (
-        <div className="w-1/5 bg-white/5 rounded-lg p-4 h-fit">
+        <div className="w-full md:max-w-72 md:m-0 mx-4 bg-white/5 rounded-lg p-4 h-fit">
             <h1 className="text-xl font-semibold text-white mb-3">Related</h1>
             {getTheDisplayWidget()}
         </div>

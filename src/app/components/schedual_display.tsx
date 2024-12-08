@@ -102,14 +102,14 @@ export default function ScheduleDisplay({ schedule, anime_services }: { schedule
                                      {/* Number indicator with teardrop effect */}
                                      <div className="absolute -top-1 left-6">
                                         <div className="relative">
-                                            <div className="w-12 h-20 bg-black rounded-b-full flex items-start justify-center pt-2 shadow-lg">
+                                            <div className="w-12 h-20 bg-gray-900 rounded-b-full flex items-start justify-center pt-2 shadow-lg">
                                                 <span className="text-lg text-white font-bold">{index + 1}</span>
                                             </div>
                                         </div>
                                     </div>
 
                                     {/* Main content area */}
-                                    <div className="flex flex-grow items-center justify-between pl-20 pr-4 py-4">
+                                    <div className="md:flex flex-grow items-center justify-between pl-20 pr-4 py-4">
                                         {/* Anime info */}
                                         <div className="flex-grow max-w-xl">
                                             <h3 className="text-lg font-medium text-white group-hover:text-blue-400 transition-colors duration-200">
@@ -132,7 +132,7 @@ export default function ScheduleDisplay({ schedule, anime_services }: { schedule
 
                                         {/* Right side: Watch Button */}
                                         {anime.aired && (
-                                            <div className="flex items-center gap-4">
+                                            <div className="flex items-center gap-4 p-2">
                                                 <button 
                                                     className="flex items-center justify-evenly w-32 h-12 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-200 group-hover:scale-105"
                                                 >

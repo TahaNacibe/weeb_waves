@@ -105,7 +105,7 @@ export default function FullFilter(): JSX.Element {
         isOpen={sections.yearSeason}
         onToggle={() => toggleSection('yearSeason')}
       >
-        <div className="flex flex-col gap-6">
+        <div className="flex md:flex-col gap-6">
           <div>
             <label className="text-white font-semibold mb-2 block">Year</label>
             <select

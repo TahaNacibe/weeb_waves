@@ -68,7 +68,7 @@ const RecommendationSection: FC<RecommendationSectionProps> = ({ animeId }) => {
     };
 
     const touchStart = (e: TouchEvent) => {
-        e.preventDefault(); // Prevent default behavior
+        // e.preventDefault(); // Prevent default behavior
         const touch = e.touches[0];
         setSnapPossible(false)
         setIsMouseDown(true);
@@ -146,7 +146,7 @@ const RecommendationSection: FC<RecommendationSectionProps> = ({ animeId }) => {
                 
             </div>
             <div className={`flex flex-row ${loading||recommendedAnime.length ==0? "hidden" : "block"}`}>
-        <section className={`flex flex-row overflow-x-hidden bg-black p-4 w-[95%] gap-6 ${!isMouseDown? parentClass : ""}`} ref={carouselRef} style={{ userSelect: 'none' }}>
+        <section className={`flex flex-row overflow-x-hidden bg-black p-4 w-[100%] gap-6 ${!isMouseDown? parentClass : ""}`} ref={carouselRef} style={{ userSelect: 'none' }}>
           {recommendedAnime.map((elem, index) => (
               <div
               key={`${elem.mal_id}${index}`} 
@@ -173,7 +173,7 @@ const RecommendationSection: FC<RecommendationSectionProps> = ({ animeId }) => {
                 </section>
                 {/* the movements buttons */}
                 
-               {recommendedAnime.length > 5? <div className="bg-black w-[4%] p-2 mt-2">
+               {recommendedAnime.length > 5? <div className="bg-black md:w-[4%] p-2 mt-2 md:block hidden">
                     {/* left go button */}
                     <button onClick={scrollToPreviousItem}>
                     <div className="bg-white/5 rounded-lg p-2 h-fit ">

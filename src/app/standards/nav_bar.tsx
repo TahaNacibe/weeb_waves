@@ -2,10 +2,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Home, Film, Tv, Search, TrendingUp, Calendar, Route } from "lucide-react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
+import ProfileAndSignInButton from "../components/profile_sign_in";
 
 export default function NavBar() {
   const router = useRouter();
+  const parm = useSearchParams()
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -37,11 +40,15 @@ export default function NavBar() {
     { name: "Seasons", href: "/seasons/Season?year=2024&season=summer", icon: Calendar },
   ];
 
+  const closeMenu = () => {
+    setIsMobileMenuOpen(false)
+  }
+
   return (
     <nav 
       style={{
         background: isScrolled 
-          ? 'rgba(0, 0, 0, 0.8)' 
+          ? 'rgba(0, 0, 0, 0.4)' 
           : 'linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%)'
       }}
       className={`fixed w-full z-50 transition-all duration-500 ${
@@ -54,7 +61,7 @@ export default function NavBar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
-            <span className="text-white font-bold text-xl">Profile</span>
+          <ProfileAndSignInButton />
           </div>
 
           {/* Desktop Navigation */}
