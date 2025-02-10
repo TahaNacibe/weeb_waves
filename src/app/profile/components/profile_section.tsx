@@ -14,14 +14,11 @@ const ProfileDashboard = () => {
   const [error, setError] = useState<string | null>(null);
   const [uid, setUid] = useState<string | null>(null);
   const firebase_services = new FirebaseServices();
-
-  // Previous hooks and functions remain the same...
-  // (logOut, handleEditProfile, handleProfileUpdate, useEffects, getStats)
   
   const logOut = async () => {
     const result = await firebase_services.handleLogout();
     if (result) {
-      router!.push('/');
+      return '/';
     }
   };
 
@@ -62,10 +59,15 @@ const ProfileDashboard = () => {
 
   useEffect(() => {
     const fetchUserData = async () => {
-      if (!uid) return;
+      if (!uid) {
+        console.log("nothing...")
+        return;
+      } 
       setIsLoading(true);
       try {
+        console.log("working on it")
         const result = await firebase_services.getUserData(uid);
+        console.log("data recived : ",result)
         if (result) {
           setUserData(result);
         }

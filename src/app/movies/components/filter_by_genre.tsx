@@ -2,7 +2,7 @@
 import AnimeGenres from "@/app/types/genres_list"
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, Suspense } from "react"
 import { useRouter, useSearchParams } from 'next/navigation'
 
 interface SectionStates {
@@ -105,11 +105,13 @@ export default function FilterByGenre(): JSX.Element {
         onToggle={() => toggleSection('genres')}
       >
         {AnimeGenres.map((genre) => (
-          <GenreItem 
+          <Suspense>
+             <GenreItem 
             key={genre.mal_id} 
             genreName={genre.name} 
             genreId={genre.mal_id} 
           />
+         </Suspense>
         ))}
       </FilterSection>
 
@@ -119,7 +121,9 @@ export default function FilterByGenre(): JSX.Element {
         onToggle={() => toggleSection('types')}
       >
         {["TV", "Movie", "OVA", "ONA", "Special"].map((type) => (
-          <TypeItem key={type} content={type} />
+          <Suspense>
+            <TypeItem key={type} content={type} />
+          </Suspense>
         ))}
       </FilterSection>
 
@@ -129,7 +133,9 @@ export default function FilterByGenre(): JSX.Element {
         onToggle={() => toggleSection('status')}
       >
         {["Airing", "Complete", "Upcoming"].map((status) => (
-          <StatusItem key={status} content={status} />
+          <Suspense>
+            <StatusItem key={status} content={status} />
+          </Suspense>
         ))}
       </FilterSection>
     </div>

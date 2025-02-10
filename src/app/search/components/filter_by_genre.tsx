@@ -2,8 +2,7 @@
 import AnimeGenres from "@/app/types/genres_list"
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
-import { useState, useRef, useEffect } from "react"
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useState, useRef, useEffect, Suspense } from "react"
 
 interface SectionStates {
   genres: boolean
@@ -105,11 +104,13 @@ export default function FilterByGenre(): JSX.Element {
         onToggle={() => toggleSection('genres')}
       >
         {AnimeGenres.map((genre) => (
-          <GenreItem 
+          <Suspense>
+            <GenreItem 
             key={genre.mal_id} 
             genreName={genre.name} 
             genreId={genre.mal_id} 
           />
+          </Suspense>
         ))}
       </FilterSection>
 
@@ -148,7 +149,6 @@ const FilterItem: React.FC<FilterItemProps> = ({ href, children }) => (
 )
 
 export const GenreItem: React.FC<GenreItemProps> = ({ genreName, genreId }) => {
-  const searchParams = useSearchParams()
   
   const updateUrl = (): string => {
     // const params = new URLSearchParams(searchParams.toString())
@@ -168,7 +168,6 @@ export const GenreItem: React.FC<GenreItemProps> = ({ genreName, genreId }) => {
 }
 
 export const TypeItem: React.FC<ContentItemProps> = ({ content }) => {
-  const searchParams = useSearchParams()
   
   const updateUrl = (): string => {
     const currentUrl = window.location.href;
@@ -186,7 +185,6 @@ export const TypeItem: React.FC<ContentItemProps> = ({ content }) => {
 }
 
 export const StatusItem: React.FC<ContentItemProps> = ({ content }) => {
-  const searchParams = useSearchParams()
   
   const updateUrl = (): string => {
     const currentUrl = window.location.href;

@@ -52,7 +52,7 @@ export default function ScheduleDisplay({ schedule, anime_services }: { schedule
             {/* Schedule display */}
             <div className="space-y-4">
                 <h2 className="text-xl font-semibold text-white mb-6">
-                    {selectedDay.charAt(0).toUpperCase() + selectedDay.slice(1)}'s Schedule
+                    {selectedDay.charAt(0).toUpperCase() + selectedDay.slice(1)}&apos;s Schedule
                 </h2>
                 
                 {isLoading ? (

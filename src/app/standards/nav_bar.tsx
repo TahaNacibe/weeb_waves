@@ -2,13 +2,11 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Home, Film, Tv, Search, TrendingUp, Calendar, Route } from "lucide-react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import ProfileAndSignInButton from "../components/profile_sign_in";
 
 export default function NavBar() {
   const router = useRouter();
-  const parm = useSearchParams()
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);

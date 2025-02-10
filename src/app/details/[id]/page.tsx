@@ -1,7 +1,7 @@
 "use client"
 import AnimeDetailsPage from "../components/main_details";
 import AnimeEpisodesList from "../components/episodes_list";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { Play, Share2, Loader2 } from 'lucide-react';
 import AnimeServices from '@/app/api/anime_services';
 import { Anime } from '@/app/types/anime_type';
@@ -9,6 +9,15 @@ import { useSearchParams } from 'next/navigation';
 import RecommendationSection from "../components/recomondation_widget";
 
 export default function Home() {
+  return (
+    <Suspense>
+    <HomePageContent />
+  </Suspense>
+  )
+}
+
+
+const HomePageContent = () => {
   const searchParams = useSearchParams();
   const animeId = searchParams.get("animeId")
   const [anime, setAnime] = useState<Anime | null>(null);

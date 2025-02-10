@@ -1,5 +1,5 @@
 "use client"
-import { FC } from "react"
+import { FC, Suspense } from "react"
 import EpisodeItem from "./episode_item"
 import { useEffect, useState } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
@@ -227,4 +227,16 @@ const AnimeEpisodesList: FC<AnimeEpisodeListType> = ({ animeTitle, animeCover })
     )
 }
 
-export default AnimeEpisodesList
+
+const AnimeEpisodesListPage = ({ animeTitle, animeCover }:{
+    animeTitle: string
+    animeCover: string
+}) => {
+    return (
+        <Suspense>
+        <AnimeEpisodesList animeTitle={animeTitle} animeCover={animeCover} />
+      </Suspense>
+    )
+}
+
+export default AnimeEpisodesListPage

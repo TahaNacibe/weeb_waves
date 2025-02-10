@@ -134,9 +134,10 @@ class FirebaseServices{
           
           const docRef = doc(db, "users", userId);
           const docSnap = await getDoc(docRef);
-          
+          console.log("docs recived ")
           if (docSnap.exists()) {
             const data = docSnap.data() as UserProfile;
+            console.log("data are before passing as : ",docSnap)
             return {
               ...data,
               Plan_to_watch: data.Plan_to_watch || [],

@@ -59,8 +59,12 @@ const AnimeDetailsPage : FC<AnimeDetailsPageType> = ({anime, formatDateRange, fo
   }
 
   const isAnimeInThatList = (listId: number): boolean => {
-    console.log(isInLists.resultMaps[listId].exists)
-    return isInLists.resultMaps[listId].exists
+    console.log(isInLists)
+    if (isInLists && isInLists.resultMaps && isInLists.resultMaps[listId]) {
+      return isInLists.resultMaps[listId].exists
+    } else {
+      return false
+    }
   };
   
   

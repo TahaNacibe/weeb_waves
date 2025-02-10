@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 
@@ -65,6 +65,15 @@ const FilterSection: React.FC<FilterSectionProps> = ({
 
 // Main filter component
 export default function FullFilter(): JSX.Element {
+  return (
+    <Suspense>
+      <FullFilterContent/>
+    </Suspense>
+  )
+}
+
+
+const FullFilterContent = () => {
   const [sections, setSections] = useState<SectionStates>({
     yearSeason: true
   });

@@ -1,6 +1,6 @@
 "use client";
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import AnimeServices from '@/app/api/anime_services';
 import Pagination from '@/app/types/pagenation_type';
 import { Anime } from '@/app/types/anime_type';
@@ -254,4 +254,13 @@ const MovieListDisplay = () => {
     );
 };
 
-export default MovieListDisplay;
+
+const MovieListDisplayPage = () => {
+    return (
+        <Suspense>
+            <MovieListDisplay />
+        </Suspense>
+    )
+}
+
+export default MovieListDisplayPage;

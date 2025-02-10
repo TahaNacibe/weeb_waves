@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect, FC,useRef } from "react";
+import { useState, useEffect, FC,useRef, Suspense } from "react";
 import AnimeServices from "@/app/api/anime_services";
 import { Play, ChevronLeft,ChevronRight } from "lucide-react";
 import RecommendationItem from "@/app/types/recomandation_type";
@@ -203,7 +203,17 @@ const AnimeWidgetInfoBar: FC<{ title: string }> = ({ title }) => (
     </div>
 );
 
-export default RecommendationSection;
+
+const RecommendationSectionPage = ({ animeId }: { animeId: string | null}) => {
+    return (
+        <Suspense>
+        <RecommendationSection animeId={animeId} />
+      </Suspense>
+    )
+}
+
+
+export default RecommendationSectionPage;
 
 
 //* 
