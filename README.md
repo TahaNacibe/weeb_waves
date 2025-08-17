@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Weeb Waves
 
-## Getting Started
+**A Next.js web application that provides personalized anime suggestions and keeps track of upcoming airing times.**
 
-First, run the development server:
+Weeb Waves features a clean, modern interface designed for anime fans. It allows users to:
+- Discover anime recommendations.
+- Stay updated with schedules and airing times.
+- Explore UI layouts inspired by streaming platforms.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+⚠️ Note: The app does not host or stream episodes, but focuses on discovery and schedule tracking.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Tech Stack
+- **Next.js** for server-side rendering and routing.
+- **React** for building the interactive UI.
+- **Tailwind CSS** for modern, responsive design.
+- APIs for fetching anime data and airing times.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Future Improvements
+- Add user accounts with favorites and watchlists.
+- Enhanced filtering and search options.
+- Notifications for airing reminders.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+This project is a showcase of building entertainment-focused platforms with strong UI/UX while respecting content distribution boundaries.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
